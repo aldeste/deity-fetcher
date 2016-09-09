@@ -1,0 +1,2 @@
+# deity-fetcher
+Fetches deitys
