@@ -19,7 +19,7 @@ function getRandomInt(min, max) {
  * @param  {Number} max Maximum key value
  * @return              Random value from initial array
  */
-function getRandomArrValue(arr, min = 0, max = arr.length) {
+function getRandomArrValue(arr, min = 1, max = arr.length) {
   return arr[getRandomInt(min, max)];
 }
 
@@ -44,7 +44,7 @@ function all(mythos = 'all') {
  */
 function random(number = 1, mythos = 'all') {
   const arr = all(mythos);
-  const l = arr.length;
+  const l = arr.length - 1;
 
   if (1 > number) {
     throw Error(`Can't use numbers bellow 1, ${number} passed`);

@@ -9,6 +9,6 @@ const deities = require('deity-fetcher');
 const randomDeity = deity.random()
 // randomDeity === Bacchus
 
-const randomDeities = dino.random(3)
-// randomDeities === ['Lycorhinus', 'Dinotyrannus', 'Megacervixosaurus']
+const randomDeities = deity.random(3)
+// randomDeities === ['Loki', 'Jupiter', 'Bacchus']
 ```
