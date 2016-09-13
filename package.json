@@ -6,11 +6,11 @@
   "author": "Alexander D'Este <alexanderdeste@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --recursive --reporter nyan",
-    "test:cov": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --recursive || true",
+    "test": "mocha --recursive --reporter nyan",
     "test:watch": "npm t -- --watch --reporter min",
-    "cov:check": "./node_modules/.bin/istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
-    "cov:report": "npm run test:cov && ./node_modules/.bin/codecov",
+    "test:cov": "istanbul cover _mocha -- --reporter spec --recursive || true",
+    "cov:check": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "cov:report": "npm run test:cov && codecov",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "config": {
