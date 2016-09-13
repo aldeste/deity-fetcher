@@ -1,0 +1,45 @@
+{
+  "name": "deity-fetcher",
+  "description": "Fetch deities",
+  "main": "index.js",
+  "version": "1.0.0-awesome",
+  "author": "Alexander D'Este <alexanderdeste@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --recursive --reporter nyan",
+    "test:cov": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --recursive || true",
+    "test:watch": "npm t -- --watch --reporter min",
+    "cov:check": "./node_modules/.bin/istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "cov:report": "./node_modules/.bin/codecov",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm test && npm run coverage:check"
+    },
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aldeste/deity-fetcher.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "bugs": {
+    "url": "https://github.com/aldeste/deity-fetcher/issues"
+  },
+  "homepage": "https://github.com/aldeste/deity-fetcher#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "codecov": "^1.0.1",
+    "commitizen": "^2.8.6",
+    "cz-conventional-changelog": "^1.2.0",
+    "ghooks": "^1.3.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2",
+    "semantic-release": "^4.3.5"
+  }
+}
