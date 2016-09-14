@@ -8,7 +8,7 @@
   "scripts": {
     "test": "mocha --recursive --reporter nyan",
     "test:watch": "npm t -- --watch --reporter min",
-    "test:cov": "istanbul cover _mocha -- --reporter spec --recursive || true",
+    "test:cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec --recursive || true",
     "cov:check": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "cov:report": "npm run test:cov && codecov",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"

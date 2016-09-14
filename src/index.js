@@ -19,7 +19,7 @@ function getRandomInt(min, max) {
  * @param  {Number} max Maximum key value
  * @return              Random value from initial array
  */
-function getRandomArrValue(arr, min = 1, max = arr.length) {
+function getRandomArrValue(arr, min = 0, max = arr.length - 1) {
   return arr[getRandomInt(min, max)];
 }
 
@@ -29,10 +29,10 @@ function getRandomArrValue(arr, min = 1, max = arr.length) {
  * @return {Array}  Array of all dieties or array of select dieties
  */
 function all(mythos = 'all') {
-  const mythosLowerCase = mythos.toLowerCase();
+  const myth = mythos.toLowerCase();
 
   return Object.keys(dieties)
-  .filter(key => dieties[key].key === mythosLowerCase || mythosLowerCase === 'all')
+  .filter(key => dieties[key].key === myth || myth === 'all')
   .map(key => dieties[key].dieties)
   .reduce((sum, arr) => sum.concat(arr), [])
 }
@@ -55,7 +55,7 @@ function random(number = 1, mythos = 'all') {
   } else {
     return new Array(number)
       .fill()
-      .map(() => getRandomArrValue(arr, 1, l));
+      .map(() => getRandomArrValue(arr, 0, l));
   }
 }
 

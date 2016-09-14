@@ -9,7 +9,6 @@ node_js:
   - '6'
 before_install:
   - npm i -g npm@^3.0.0
-  - npm i -g mocha
 before_script:
   - npm prune
   - npm run test
